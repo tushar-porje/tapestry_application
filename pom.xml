@@ -18,7 +18,7 @@
     <dependency>
       <groupId>org.apache.tapestry</groupId>
       <artifactId>tapestry-core</artifactId>
-      <version>5.8.4</version>
+      <version>5.8.7</version>
     </dependency>
   </dependencies>
 
@@ -27,8 +27,8 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-plugin-plugin</artifactId>
-        <version>3.10.2</version>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.4.0</version>
       </plugin>
 
       <plugin>
@@ -50,7 +50,6 @@
           </systemProperties>
         </configuration>
       </plugin>
-
     </plugins>
   </build>
 </project>
