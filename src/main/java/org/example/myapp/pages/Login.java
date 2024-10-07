@@ -45,7 +45,7 @@ public class Login {
     }
 
     public Object onSuccessFromLoginForm() {
-        welcomePage.onActivate(username);
-        return welcomePage;
+//        welcomePage.onActivate(username);
+        return EmployeeList.class;
     }
 }

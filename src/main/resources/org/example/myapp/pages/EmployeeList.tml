@@ -1,0 +1,15 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter">
+<head></head>
+
+<body>
+    <div t:id="header"/>
+    <h2>Employee List</h2>
+
+    <t:grid source="employees" row="currentEmployee" t:include="id,name,age,address,username"  style="width: 100%; height: 200px; margin-left: 10%; margin-top: 20px">
+        <p:idCell>
+            <t:pagelink page="EmployeeDetails" context="${currentEmployee.id}">${currentEmployee.id}</t:pagelink>
+        </p:idCell>
+
+    </t:grid>
+</body>
+</html>
