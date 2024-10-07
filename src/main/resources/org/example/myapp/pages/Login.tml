@@ -1,0 +1,75 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+            font-weight: bold;
+            color: #555;
+        }
+
+        t:textfield, t:passwordfield {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        t:submit {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        t:submit:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div t:id="header"/>
+<div class="login-container">
+    <h2>User Login</h2>
+    <t:form t:id="loginForm" method="post">
+        <p><label>Username: <t:textfield t:id="username" validate="required"/></label></p>
+        <p><label>Password: <t:passwordfield t:id="password" validate="required"/></label></p>
+        <p><t:submit value="Login" /></p>
+    </t:form>
+</div>
+</body>
+</html>
