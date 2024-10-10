@@ -8,7 +8,9 @@ import org.apache.tapestry5.beaneditor.Validate;
 import org.apache.tapestry5.corelib.components.Form;
 import org.apache.tapestry5.corelib.components.PasswordField;
 import org.apache.tapestry5.corelib.components.TextField;
+import org.apache.tapestry5.ioc.annotations.Inject;
 import org.example.myapp.components.Header;
+import org.example.myapp.services.LoginService;
 
 public class Login {
 
@@ -29,18 +31,25 @@ public class Login {
     @InjectComponent("password")
     private PasswordField passwordField;
 
-    @InjectPage
-    private Welcome welcomePage;
+//    @InjectPage
+//    private Welcome welcomePage;
+
+    @Inject
+    LoginService loginService;
 
     @Component
     private Header header;
 
     void onValidateFromLoginForm(){
-        if (!username.equals("tushar123@gmail.com")) {
+
+        if (!loginService.isValidUserName(username)) {
             loginForm.recordError(userNameField,"Invalid username");
         }
-        if(!password.equals("tushar@123")){
+        if(!loginService.isValidPassword(password)){
             loginForm.recordError(passwordField,"invalid password");
+        }
+        if (!loginService.isValidLogin(username,password)){
+            loginForm.recordError("Invalid username and password");
         }
     }
 

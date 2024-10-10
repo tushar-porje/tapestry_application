@@ -5,15 +5,19 @@ import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.example.myapp.components.Header;
 import org.example.myapp.entity.Employee;
+import org.example.myapp.services.EmployeeService;
 
 public class EmployeeDetails {
     @Property
     private Employee employee;
 
+    @Inject
+    EmployeeService employeeService;
+
     @Component
     private Header header;
 
     void onActivate(int empId){
-        employee=new Employee(1, "tushar1", 25, "nashik1", "tushar1@gmail.com", "tushar1@123");
+        employee= employeeService.getEmployeeById(empId);
     }
 }
