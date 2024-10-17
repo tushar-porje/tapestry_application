@@ -1,22 +1,19 @@
 package org.example.myapp.services.serviceimpl;
 
 import org.apache.tapestry5.ioc.annotations.Inject;
+import org.example.myapp.dao.EmployeeDao;
 import org.example.myapp.entity.Employee;
 import org.example.myapp.services.EmployeeService;
 import org.example.myapp.services.LoginService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class LoginServiceImpl implements LoginService {
 
     @Inject
     private EmployeeService employeeService;
-
-//    List<Employee> employees;
-
-//    public LoginServiceImpl() {
-//        employees = employeeService.getAllEmployees();
-//    }
 
     @Override
     public boolean isValidLogin(String username, String password) {
@@ -24,7 +21,6 @@ public class LoginServiceImpl implements LoginService {
         return employees.stream()
                 .anyMatch(employee -> employee.getUsername().equals(username)
                         && employee.getPassword().equals(password));
-
     }
 
     @Override

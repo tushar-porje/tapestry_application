@@ -1,0 +1,159 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<head>
+    <style>
+        #header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Container for the form content */
+        .main-content {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .form-container {
+            border: 1px solid #ccc;
+            padding: 30px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Left and right sections of the form */
+        .form-left, .form-right {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        /* Layout for the form-left (labels) */
+        .form-left {
+            margin-right: 20px;
+            text-align: right;
+        }
+
+        .form-item {
+            margin-bottom: 15px;
+        }
+
+        /* Layout for the form-right (input fields) */
+        .form-right {
+            text-align: left;
+        }
+
+        /* Styling for labels */
+        label {
+            font-weight: bold;
+        }
+
+        /* Styling for input fields */
+        input[type="text"], input[type="password"] {
+            width: 200px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        /* Button container */
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Save button styling */
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Styling for the back link */
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link p {
+            font-size: 16px;
+        }
+
+        .back-link a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div t:id="header"/>
+
+<div id="editEmployee">
+    <h2>Edit Employee</h2>
+</div>
+
+<div class="main-content">
+    <div class="form-container">
+        <t:form t:id="editForm">
+            <div class="form-left">
+                <div class="form-item">
+                    <label for="name">Name:</label>
+                </div>
+                <div class="form-item">
+                    <label for="age">Age:</label>
+                </div>
+                <div class="form-item">
+                    <label for="address">Address:</label>
+                </div>
+                <div class="form-item">
+                    <label for="username">Username:</label>
+                </div>
+                <div class="form-item">
+                    <label for="password">Password:</label>
+                </div>
+            </div>
+
+            <div class="form-right">
+                <div class="form-item">
+                    <t:textfield t:id="name" value="employeeName"/>
+                </div>
+                <div class="form-item">
+                    <t:textfield t:id="age" value="employeeAge"/>
+                </div>
+                <div class="form-item">
+                    <t:textfield t:id="address" value="employeeAddress"/>
+                </div>
+                <div class="form-item">
+                    <t:textfield t:id="username" value="employeeUsername"/>
+                </div>
+                <div class="form-item">
+                    <t:passwordfield t:id="password" value="employeePassword"/>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </t:form>
+    </div>
+    <div class="back-link">
+        <p><t:pagelink page="EmployeeList">Back to Employee List</t:pagelink></p>
+    </div>
+</div>
+</body>
+</html>

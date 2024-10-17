@@ -3,6 +3,8 @@ package org.example.myapp.services;
 import org.apache.tapestry5.SymbolConstants;
 import org.apache.tapestry5.commons.MappedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;
+import org.example.myapp.dao.EmployeeDao;
+import org.example.myapp.dao.daoimpl.EmployeeDaoImpl;
 import org.example.myapp.services.serviceimpl.EmployeeServiceImpl;
 import org.example.myapp.services.serviceimpl.LoginServiceImpl;
 
@@ -17,6 +19,7 @@ public class MyAppModule {
     public static void bind(ServiceBinder binder) {
         binder.bind(LoginService.class, LoginServiceImpl.class).withId("LoginServiceImpl");
         binder.bind(EmployeeService.class, EmployeeServiceImpl.class).withId("EmployeeServiceImpl");
+        binder.bind(EmployeeDao.class, EmployeeDaoImpl.class).withId("EmployeeDaoImpl");
     }
 
 }

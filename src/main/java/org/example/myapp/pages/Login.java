@@ -10,6 +10,7 @@ import org.apache.tapestry5.corelib.components.PasswordField;
 import org.apache.tapestry5.corelib.components.TextField;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.example.myapp.components.Header;
+import org.example.myapp.services.EmployeeService;
 import org.example.myapp.services.LoginService;
 
 public class Login {
@@ -30,15 +31,17 @@ public class Login {
 
     @InjectComponent("password")
     private PasswordField passwordField;
-
-//    @InjectPage
-//    private Welcome welcomePage;
-
+    
     @Inject
     LoginService loginService;
 
+    @Inject
+    EmployeeService employeeService;
+
     @Component
     private Header header;
+
+    private int empId;
 
     void onValidateFromLoginForm(){
 
@@ -54,7 +57,14 @@ public class Login {
     }
 
     public Object onSuccessFromLoginForm() {
-//        welcomePage.onActivate(username);
         return EmployeeList.class;
     }
+//    public Object onSuccessFromLoginForm() {
+//        this.empId = employeeService.getIdByUserName(this.username);
+//        return EmployeeDetails.class;
+//    }
+//    int onPassivate(){
+//        return this.empId;
+//    }
+
 }

@@ -1,0 +1,99 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<head>
+    <style>
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .main-content {
+            margin-top: 100px;
+            padding: 20px;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .form-left {
+            margin-right: 20px;
+            padding: 10px;
+            text-align: right;
+        }
+
+        .form-right {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .form-item {
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div t:id="header"/>
+
+<div class="main-content">
+    <div class="addnewemployee">
+        <h2>Add New Employee</h2>
+    </div>
+    <div class="form-container">
+        <div class="form-left">
+            <div class="form-item">
+                <p><strong>Name:</strong></p>
+            </div>
+            <div class="form-item">
+                <p><strong>Age:</strong></p>
+            </div>
+            <div class="form-item">
+                <p><strong>Address:</strong></p>
+            </div>
+            <div class="form-item">
+                <p><strong>Username:</strong></p>
+            </div>
+            <div class="form-item">
+                <p><strong>Password:</strong></p>
+            </div>
+        </div>
+
+        <div class="form-right">
+            <t:form t:id="addEmployeeForm">
+                <div class="form-item">
+                    <t:textfield t:value="employeeName" />
+                </div>
+                <div class="form-item">
+                    <t:textfield t:value="employeeAge" />
+                </div>
+                <div class="form-item">
+                    <t:textfield t:value="employeeAddress" />
+                </div>
+                <div class="form-item">
+                    <t:textfield t:value="employeeUsername" />
+                </div>
+                <div class="form-item">
+                    <t:passwordfield t:value="employeePassword" />
+                </div>
+                <div>
+                    <t:submit value="Add Employee" />
+                </div>
+            </t:form>
+        </div>
+    </div>
+
+    <div class="back-link">
+        <p><t:pagelink page="EmployeeList">Back to Employee List</t:pagelink></p>
+    </div>
+</div>
+</body>
+</html>

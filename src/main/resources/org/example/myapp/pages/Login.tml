@@ -54,10 +54,26 @@
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
+            margin-bottom: 15px; /* Adds space below the submit button */
         }
 
         t:submit:hover {
             background-color: #45a049;
+        }
+
+        .register {
+            margin-top: 10px; /* Adjust space if needed */
+            text-align: center; /* Center-aligns the text in the register class */
+        }
+
+        .register a {
+            text-decoration: none; /* Removes underline from the link */
+            color: #4CAF50; /* Sets the color of the link */
+            font-weight: bold; /* Makes the link text bold */
+        }
+
+        .register a:hover {
+            text-decoration: underline; /* Adds an underline on hover for better interactivity */
         }
     </style>
 </head>
@@ -70,6 +86,9 @@
         <p><label>Password: <t:passwordfield t:id="password" validate="required"/></label></p>
         <p><t:submit value="Login" /></p>
     </t:form>
+    <div class="register">
+        <p><t:pagelink page="AddEmployee">Register</t:pagelink></p>
+    </div>
 </div>
 </body>
 </html>

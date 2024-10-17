@@ -16,13 +16,17 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(int id, String name, int age, String address, String username, String password) {
-        this.id = id;
+    public Employee(String name, int age, String address, String username, String password){
         this.name = name;
         this.age = age;
         this.address = address;
         this.username = username;
         this.password = password;
+    }
+
+    public Employee(int id, String name, int age, String address, String username, String password) {
+        this(name, age, address, username, password);
+        this.id = id;
     }
 
     public int getId() {

@@ -39,6 +39,16 @@
             margin-bottom: 10px;
         }
 
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .button-container button {
+            margin-right: 10px;
+        }
+
         .back-link {
             text-align: center;
             margin-top: 20px;
@@ -46,9 +56,7 @@
     </style>
 </head>
 <body>
-<div class="header" t:id="header">
-    <h2>Company Header</h2>
-</div>
+<div t:id="header"/>
 
 <div class="main-content">
     <div class="details-container">
@@ -98,6 +106,19 @@
             </t:if>
         </div>
     </div>
+
+    <div class="button-container">
+        <t:form t:id="edit">
+            <button t:type="submit" class="btn btn-primary" value="Edit"/>
+        </t:form>
+    </div>
+
+    <div class="button-container">
+        <t:form t:id="delete">
+            <button t:type="submit" class="btn btn-danger" value="Delete" onclick="return confirm('Are you sure you want to delete this employee?');"/>
+        </t:form>
+    </div>
+
     <div class="back-link">
         <p><t:pagelink page="EmployeeList">Back to Employee List</t:pagelink></p>
     </div>
