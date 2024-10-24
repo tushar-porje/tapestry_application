@@ -20,12 +20,16 @@ public class EmployeeDetails {
 
     private int empId;
 
+    @Inject
+    private PageRenderLinkSource pageRenderLinkSource;
+
     void onActivate(int empId){
+        this.empId=empId;
         employee= employeeService.getEmployeeById(empId);
     }
 
     Object onSubmitFromEdit() {
-        return EditEmployee.class;
+        return this.pageRenderLinkSource.createPageRenderLinkWithContext(EditEmployee.class, this.empId);
     }
 
     int onPassivate() {
