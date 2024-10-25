@@ -23,11 +23,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public List<Employee> getAllEmployees() {
-        return employeeDao.findAllEmployee();
+        employeeList = employeeDao.findAllEmployee();
+        return employeeList;
     }
 
     @Override
     public Integer addEmployee(Employee employee) {
+
         return employeeDao.saveEmployee(employee);
     }
 

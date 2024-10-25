@@ -9,7 +9,10 @@
         <p:idCell>
             <t:pagelink page="EmployeeDetails" context="${currentEmployee.id}">${currentEmployee.id}</t:pagelink>
         </p:idCell>
-
     </t:grid>
+
+    <div class="register">
+            <p><t:pagelink page="AddEmployee">Add Employee</t:pagelink></p>
+    </div>
 </body>
 </html>

@@ -82,6 +82,7 @@
 <div class="login-container">
     <h2>User Login</h2>
     <t:form t:id="loginForm" method="post">
+        <t:errors class="error-messages"/>
         <p><label>Username: <t:textfield t:id="username" validate="required"/></label></p>
         <p><label>Password: <t:passwordfield t:id="password" validate="required"/></label></p>
         <p><t:submit value="Login" /></p>

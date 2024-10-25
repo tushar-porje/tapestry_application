@@ -45,12 +45,12 @@ public class Login {
 
     void onValidateFromLoginForm(){
 
-        if (!loginService.isValidUserName(username)) {
-            loginForm.recordError(userNameField,"Invalid username");
-        }
-        if(!loginService.isValidPassword(password)){
-            loginForm.recordError(passwordField,"invalid password");
-        }
+//        if (!loginService.isValidUserName(username)) {
+//            loginForm.recordError(userNameField,"Invalid username");
+//        }
+//        if(!loginService.isValidPassword(password)){
+//            loginForm.recordError(passwordField,"invalid password");
+//        }
         if (!loginService.isValidLogin(username,password)){
             loginForm.recordError("Invalid username and password");
         }
@@ -59,12 +59,4 @@ public class Login {
     public Object onSuccessFromLoginForm() {
         return EmployeeList.class;
     }
-//    public Object onSuccessFromLoginForm() {
-//        this.empId = employeeService.getIdByUserName(this.username);
-//        return EmployeeDetails.class;
-//    }
-//    int onPassivate(){
-//        return this.empId;
-//    }
-
 }
